@@ -1,22 +1,19 @@
 import Button from "@mui/material/Button";
 import PurchaseItem from "./types/PurchaseItem";
+import Link from 'next/link';
 
 interface CheckoutButtonProps {
     list: PurchaseItem[];
 }
 
 export default function CheckoutButton(props: CheckoutButtonProps) {
-    const handleSubmit = (event: React.FormEvent) => {
-        event.preventDefault();
-        let total = 0;
-        props.list.forEach((item) => {
-            total += item.price * item.quantity;
-        });
-        alert("total: $" + total);
-    }
-
     return (
-        <form onSubmit={handleSubmit}>
+        <Link
+            href={{
+                pathname: "/checkout",
+                query: { list: JSON.stringify(props.list) },
+            }}
+        >
             <Button
                 variant="contained"
                 type="submit"
@@ -25,6 +22,6 @@ export default function CheckoutButton(props: CheckoutButtonProps) {
             >
                 Checkout
             </Button>
-        </form>
+        </Link>
     );
 }
