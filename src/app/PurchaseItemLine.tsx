@@ -67,9 +67,6 @@ export default function PurchaseItemLine(props: purchaseItemLineProps) {
                 {props.item.name}
 
             </TableCell>
-            {/* <TableCell>
-                {props.item.name}
-            </TableCell> */}
             <TableCell>
                 ${props.item.price}
             </TableCell>

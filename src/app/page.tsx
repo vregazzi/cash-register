@@ -1,11 +1,11 @@
 "use client";
-import React, { useEffect, useOptimistic } from 'react';
+import React from 'react';
 import { useState } from 'react';
 import PurchaseItem from './types/PurchaseItem';
 import PurchaseItemLine from './PurchaseItemLine';
 import ProductEntry from './ProductEntry';
 import Table from "@mui/material/Table";
-import { Box, Button, TableBody, TableCell, TableRow, Typography } from "@mui/material";
+import { Box, TableBody, TableCell, TableRow, Typography } from "@mui/material";
 import PurchaseTotal from './PurchaseTotal';
 import CheckoutButton from './CheckoutButton';
 
