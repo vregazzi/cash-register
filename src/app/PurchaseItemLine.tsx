@@ -12,7 +12,6 @@ interface purchaseItemLineProps {
     list: PurchaseItem[];
     deleteItem: (id: string) => Promise<void>;
     editItem: (id: string, text: number) => Promise<void>;
-
 }
 
 export default function PurchaseItemLine(props: purchaseItemLineProps) {
