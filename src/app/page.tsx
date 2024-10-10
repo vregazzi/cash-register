@@ -73,7 +73,13 @@ export default function Home(props: AppProps) {
             <TableCell>Price</TableCell>
           </TableRow>
           {listItems.map((item) => (
-            <PurchaseItemLine item={item} list={listItems} deleteItem={removeItem} editItem={editItem} />
+            <PurchaseItemLine
+              item={item}
+              list={listItems}
+              deleteItem={removeItem}
+              editItem={editItem}
+              key={item.id}
+            />
           ))}
           <TableRow>
             <TableCell colSpan={1} />
