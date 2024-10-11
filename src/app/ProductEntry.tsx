@@ -9,7 +9,7 @@ const checkForDuplicates = (list: PurchaseItem[], itemName: string) => {
 
 interface ProductEntryProps {
     list: PurchaseItem[];
-    setList: (list: PurchaseItem[]) => void;
+    addItem: (text: string) => void;
 }
 
 export default function ProductEntry(props: ProductEntryProps) {
@@ -23,28 +23,10 @@ export default function ProductEntry(props: ProductEntryProps) {
         event
     ) => {
         event.preventDefault();
-
         if (inputText === "") {
             return;
         }
-        if (checkForDuplicates(props.list, inputText)) {
-            setInputText("");
-            props.setList(props.list.map((item) => {
-                if (item.name === inputText) {
-                    item.quantity += 1;
-                }
-                return item;
-            }, []));
-            return;
-        }
-
-        props.setList([...props.list, {
-            name: inputText,
-            id: "0",
-            price: 0,
-            quantity: 1
-        }]);
-        setInputText("");
+        props.addItem(inputText);
     };
 
     return (
