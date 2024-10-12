@@ -8,7 +8,7 @@ import Table from "@mui/material/Table";
 import { Box, TableBody, TableCell, TableRow, Typography } from "@mui/material";
 import PurchaseTotal from './PurchaseTotal';
 import CheckoutButton from './CheckoutButton';
-import { getInventoryItem } from './util/api';
+import { getItem } from './util/api';
 
 
 export default function Home() {
@@ -29,7 +29,8 @@ export default function Home() {
         }
 
         // Get the item from the inventory
-        const item = await getInventoryItem(text);
+        const item = await getItem(text);
+        console.log(item);
 
         // If the item is not in the inventory, return
         if (item === null) {

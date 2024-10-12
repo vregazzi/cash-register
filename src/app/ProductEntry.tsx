@@ -3,13 +3,9 @@ import { TextField } from "@mui/material";
 import PurchaseItem from "./types/PurchaseItem";
 import { useState } from "react";
 
-const checkForDuplicates = (list: PurchaseItem[], itemName: string) => {
-    return list.some((item) => item.name === itemName);
-}
-
 interface ProductEntryProps {
     list: PurchaseItem[];
-    addItem: (text: string) => void;
+    addItem: (text: string) => Promise<void>;
 }
 
 export default function ProductEntry(props: ProductEntryProps) {
@@ -26,7 +22,7 @@ export default function ProductEntry(props: ProductEntryProps) {
         if (inputText === "") {
             return;
         }
-        props.addItem(inputText);
+        await props.addItem(inputText);
     };
 
     return (
