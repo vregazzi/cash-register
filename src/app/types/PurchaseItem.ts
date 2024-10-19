@@ -1,6 +1,6 @@
 export default interface PurchaseItem {
-    name: string;
-    id: string;
-    price: number;
-    quantity: number;
+  name: string;
+  id: string;
+  price: number;
+  quantity: number;
 }
